@@ -47,6 +47,24 @@ movieDB.movies.forEach((film, index)=>{
     `;
 });
 
+const btn = document.querySelector('button');
+let counter = 0;
+const showEventTarget = (e) => {
+    if(counter == 0){
+        e.preventDefault();
+        console.log(e.target);
+        counter++;
+    }
+    else{
+         btn.removeEventListener('click', showEventTarget);
+    }
+       
+    
+};
+
+btn.addEventListener('click', showEventTarget);
+
+
     
 
 
